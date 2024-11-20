@@ -73,7 +73,7 @@ public class ControladoraPersistencia {
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
-;
+
     }
     
     
