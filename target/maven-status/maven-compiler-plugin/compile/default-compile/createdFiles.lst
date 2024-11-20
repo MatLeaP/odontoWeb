@@ -4,6 +4,7 @@ com\mycompany\odontoweb\Logica\Secretario_.class
 com\mycompany\odontoweb\Servlets\SvLogin.class
 com\mycompany\odontoweb\Logica\Paciente.class
 com\mycompany\odontoweb\Logica\Usuario.class
+com\mycompany\odontoweb\Servlets\SvEditarOdontologo.class
 com\mycompany\odontoweb\Persistencia\PacienteJpaController.class
 com\mycompany\odontoweb\Logica\Horario_.class
 com\mycompany\odontoweb\Logica\Persona.class
@@ -20,6 +21,7 @@ com\mycompany\odontoweb\Logica\Odontologo.class
 com\mycompany\odontoweb\Logica\Turno_.class
 com\mycompany\odontoweb\Persistencia\exceptions\PreexistingEntityException.class
 com\mycompany\odontoweb\Persistencia\UsuarioJpaController.class
+com\mycompany\odontoweb\Servlets\SvEliminarOdontologos.class
 com\mycompany\odontoweb\Servlets\SvUsuarios.class
 com\mycompany\odontoweb\Logica\Odontologo_.class
 com\mycompany\odontoweb\Logica\Turno.class

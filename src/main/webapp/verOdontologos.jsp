@@ -54,7 +54,7 @@
                                     %>
                                     <tbody>
                                         <%for(Odontologo odon : listaOdontologos){%>
-                                        <tr>
+                                        <tr>                                            
                                             <td><%= odon.getDni()%></td>
                                             <td><%= odon.getNombre()%></td>
                                             <td><%= odon.getApellido()%></td>
@@ -63,13 +63,13 @@
                                             <td><%= odon.getFecha_nac()%></td>
                                             <td><%= odon.getEspecialidad()%></td>
                                             <td style="display:flex; width:230px;">
-                                                <form name="eliminar" action="SvEliminarOdontologos" method="POST">
+                                                <form name="eliminar" action="SvEliminarOdontologo" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">
                                                         <i class="fas fa-trash-alt"></i>Eliminar
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= odon.getId() %>">
                                                 </form>
-                                                <form name="editar" action="SvEditarOdontologos" method="GET">
+                                                <form name="editar" action="SvEditarOdontologo" method="GET">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:blue; margin-left:5px;">
                                                         <i class="fas fa-trash-alt"></i>Editar
                                                     </button>
