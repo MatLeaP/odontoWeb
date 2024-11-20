@@ -26,6 +26,7 @@ com\mycompany\odontoweb\Logica\Turno.class
 com\mycompany\odontoweb\Persistencia\SecretarioJpaController.class
 com\mycompany\odontoweb\Logica\Horario.class
 com\mycompany\odontoweb\Logica\Persona_.class
+com\mycompany\odontoweb\Servlets\SvOdontologos.class
 com\mycompany\odontoweb\Persistencia\TurnoJpaController.class
 com\mycompany\odontoweb\Servlets\SvEliminarUsuarios.class
 com\mycompany\odontoweb\Persistencia\exceptions\IllegalOrphanException.class

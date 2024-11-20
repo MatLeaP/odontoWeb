@@ -1,8 +1,8 @@
 package com.mycompany.odontoweb.Persistencia;
 
+import com.mycompany.odontoweb.Logica.Odontologo;
 import com.mycompany.odontoweb.Logica.Usuario;
 import com.mycompany.odontoweb.Persistencia.exceptions.NonexistentEntityException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class ControladoraPersistencia {
     
     //HorarioJpaController horaJpa = new HorarioJpaController();
-    //OdontologoJpaController odontologoJpa = new OdontologoJpaController();
+    OdontologoJpaController odontologoJpa = new OdontologoJpaController();
     //PacienteJpaController pacienteJpa = new PacienteJpaController();
     //PersonaJpaController personaJpa = new PersonaJpaController();
     //ResponsableJpaController responsableJpa = new ResponsableJpaController();
@@ -54,6 +54,16 @@ public class ControladoraPersistencia {
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void crearOdontologo(Odontologo odon) {
+        
+        odontologoJpa.create(odon);
+    }
+
+    public List<Odontologo> traerOdontologos() {
+        
+        return odontologoJpa.findOdontologoEntities();
     }
     
     
