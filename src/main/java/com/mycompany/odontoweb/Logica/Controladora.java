@@ -77,6 +77,11 @@ public class Controladora {
         return controlPersis.traerOdontologos();
     }
 
+    public void eliminarOdontologo(int id) {
+        
+        controlPersis.eliminarOdontologo(id);
+    }
+
    
 }
 

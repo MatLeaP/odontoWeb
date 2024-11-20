@@ -65,6 +65,16 @@ public class ControladoraPersistencia {
         
         return odontologoJpa.findOdontologoEntities();
     }
+
+    public void eliminarOdontologo(int id) {
+        
+        try {
+            odontologoJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+;
+    }
     
     
 }
