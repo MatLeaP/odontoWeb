@@ -5,10 +5,11 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persiste
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\PreexistingEntityException.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\SecretarioJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarUsuario.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvPacientes.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\ResponsableJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Persona.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Controladora.java
-C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarOdonotologos.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarOdontologo.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvOdontologos.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\PacienteJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Paciente.java
@@ -23,5 +24,6 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persiste
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\IllegalOrphanException.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Responsable.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\TurnoJpaController.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarOdontologos.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\NonexistentEntityException.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Odontologo.java

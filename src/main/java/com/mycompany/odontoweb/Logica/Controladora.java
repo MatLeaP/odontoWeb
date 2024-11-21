@@ -90,6 +90,38 @@ public class Controladora {
         controlPersis.editarOdontologo(odon);
     }
 
+    public void crearPaciente(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String os, String tipo_sangre) {
+        
+        Paciente paciente = new Paciente();
+        paciente.setDni(dni);
+        paciente.setNombre(nombre);
+        paciente.setApellido(apellido);
+        paciente.setTelefono(telefono);
+        paciente.setDireccion(direccion);
+        paciente.setFecha_nac(fecha_nac);
+        paciente.setTiene_os(os);
+        paciente.setTipo_sangre(tipo_sangre);
+        
+        controlPersis.crearPaciente(paciente);
+    }
+
+    public List<Paciente> traerPacientes() {
+        return controlPersis.traerPacientes();
+        
+    }
+
+    
+
+    public void eliminarPaciente(int id) {
+        
+        controlPersis.eliminarPaciente(id);
+    }
+
+    public Paciente traerPaciente(int id) {
+        
+        return controlPersis.traerPaciente(id);
+    }
+
    
 
     

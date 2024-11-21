@@ -1,6 +1,7 @@
 package com.mycompany.odontoweb.Persistencia;
 
 import com.mycompany.odontoweb.Logica.Odontologo;
+import com.mycompany.odontoweb.Logica.Paciente;
 import com.mycompany.odontoweb.Logica.Usuario;
 import com.mycompany.odontoweb.Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -12,7 +13,7 @@ public class ControladoraPersistencia {
     
     //HorarioJpaController horaJpa = new HorarioJpaController();
     OdontologoJpaController odontologoJpa = new OdontologoJpaController();
-    //PacienteJpaController pacienteJpa = new PacienteJpaController();
+    PacienteJpaController pacienteJpa = new PacienteJpaController();
     //PersonaJpaController personaJpa = new PersonaJpaController();
     //ResponsableJpaController responsableJpa = new ResponsableJpaController();
     //SecretarioJpaController secretarioJpa = new SecretarioJpaController();
@@ -89,6 +90,31 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void crearPaciente(Paciente paciente) {
+        
+        pacienteJpa.create(paciente);
+    }
+
+    public List<Paciente> traerPacientes() {
+        
+        return pacienteJpa.findPacienteEntities();
+    }
+
+    public void eliminarPaciente(int id) {
+        
+        try {
+            pacienteJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Paciente traerPaciente(int id) {
+        return pacienteJpa.findPaciente(id);
+    }
+
+   
 
 
     

@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public class Paciente extends Persona implements Serializable{
     
     //private int id_paciente;
-    private boolean tiene_os;
+    private String tiene_os;
     private String tipo_sangre;
     @OneToOne
     private Responsable responsable;
@@ -22,7 +22,7 @@ public class Paciente extends Persona implements Serializable{
     public Paciente() {
     }
 
-    public Paciente(boolean tiene_os, String tipo_sangre, Responsable responsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Paciente(String tiene_os, String tipo_sangre, Responsable responsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_os = tiene_os;
         this.tipo_sangre = tipo_sangre;
@@ -42,11 +42,11 @@ public class Paciente extends Persona implements Serializable{
         this.id_paciente = id_paciente;
     }*/
 
-    public boolean isTiene_os() {
+    public String getTiene_os() {
         return tiene_os;
     }
 
-    public void setTiene_os(boolean tiene_os) {
+    public void setTiene_os(String tiene_os) {
         this.tiene_os = tiene_os;
     }
 
