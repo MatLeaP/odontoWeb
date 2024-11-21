@@ -28,8 +28,8 @@
             </div>
             <div class="col-sm-6 mb-3">
                 <input type="date" class="form-control form-control-user" id="fechanac" name="fechanac"
-                       placeholder="Fecha de nacimiento">
-            </div>
+                       placeholder="Fecha de nacimiento" required>
+            </div>            
             <div>
                 <label for="os">¿Tiene obra social?</label>
                 <select id="os" name="os">

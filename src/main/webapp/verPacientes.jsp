@@ -73,7 +73,7 @@
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= pacien.getId() %>">
                                                 </form>
-                                                <form name="editar" action="SvEditarPacientes" method="GET">
+                                                <form name="editar" action="SvEditarPaciente" method="GET">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:blue; margin-left:5px;">
                                                         <i class="fas fa-trash-alt"></i>Editar
                                                     </button>

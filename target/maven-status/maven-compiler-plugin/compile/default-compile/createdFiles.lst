@@ -13,6 +13,7 @@ com\mycompany\odontoweb\Logica\Secretario.class
 com\mycompany\odontoweb\Persistencia\PersonaJpaController.class
 com\mycompany\odontoweb\Persistencia\OdontologoJpaController.class
 com\mycompany\odontoweb\Logica\Responsable.class
+com\mycompany\odontoweb\Servlets\SvEditarPaciente.class
 com\mycompany\odontoweb\Logica\Responsable_.class
 com\mycompany\odontoweb\Logica\Usuario_.class
 com\mycompany\odontoweb\Persistencia\ControladoraPersistencia.class

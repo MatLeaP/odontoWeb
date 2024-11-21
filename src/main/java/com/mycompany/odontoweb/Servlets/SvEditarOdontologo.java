@@ -68,7 +68,8 @@ public class SvEditarOdontologo extends HttpServlet {
             return;
         }
 
-        Odontologo odon = new Odontologo();
+        
+        Odontologo odon = (Odontologo) request.getSession().getAttribute("odonEditar") ;
         
         odon.setDni(dni);
         odon.setNombre(nombre);
@@ -80,7 +81,7 @@ public class SvEditarOdontologo extends HttpServlet {
         
         control.editarOdontologo(odon);
         
-        response.sendRedirect("verOdontologos.jsp");
+        response.sendRedirect("SvOdontologos");
         
     }
 

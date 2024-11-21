@@ -34,7 +34,7 @@
             </div>
             <div class="col-sm-6 mb-3">
                 <input type="date" class="form-control form-control-user" id="fechanac" name="fechanac"
-                       placeholder="Fecha de nacimiento" value="<%= odon.getFecha_nac() %>">
+                       placeholder="Fecha de nacimiento" value="<%= odon.getFecha_nac() %>" required>
             </div>
             <div class="col-sm-6 mb-3">
                 <input type="text" class="form-control form-control-user" id="especialidad" name="especialidad"

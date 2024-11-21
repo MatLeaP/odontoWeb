@@ -108,9 +108,7 @@ public class Controladora {
     public List<Paciente> traerPacientes() {
         return controlPersis.traerPacientes();
         
-    }
-
-    
+    }    
 
     public void eliminarPaciente(int id) {
         
@@ -120,6 +118,11 @@ public class Controladora {
     public Paciente traerPaciente(int id) {
         
         return controlPersis.traerPaciente(id);
+    }
+
+    public void editarPaciente(Paciente pacien) {
+        
+        controlPersis.editarPaciente(pacien);
     }
 
    

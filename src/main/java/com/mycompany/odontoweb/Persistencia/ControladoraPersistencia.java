@@ -114,6 +114,17 @@ public class ControladoraPersistencia {
         return pacienteJpa.findPaciente(id);
     }
 
+    public void editarPaciente(Paciente pacien) {
+        
+        try {
+            pacienteJpa.edit(pacien);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+
    
 
 
