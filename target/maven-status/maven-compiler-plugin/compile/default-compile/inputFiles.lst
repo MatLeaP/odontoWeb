@@ -1,6 +1,7 @@
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Turno.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Horario.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Usuario.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\DiaSemana.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\ControladoraPersistencia.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\PreexistingEntityException.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\SecretarioJpaController.java
@@ -16,6 +17,7 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\PacienteJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Paciente.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\PersonaJpaController.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvResponsables.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarUsuarios.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvUsuarios.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Secretario.java
@@ -29,3 +31,4 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persiste
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarOdontologos.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\NonexistentEntityException.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Odontologo.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvHorario.java

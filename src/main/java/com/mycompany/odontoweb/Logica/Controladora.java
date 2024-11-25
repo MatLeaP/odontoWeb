@@ -125,6 +125,56 @@ public class Controladora {
         controlPersis.editarPaciente(pacien);
     }
 
+    public void crearHorario(String horarioInicio, String horarioFin) {
+        
+        Horario horario = new Horario();
+        
+        horario.setHorario_inicio(horarioInicio);
+        horario.setHorario_fin(horarioFin);
+        
+        
+        controlPersis.crearHorario(horario);
+    }
+
+    public List<Horario> traerHorarios() {
+        
+        return controlPersis.traerHorarios();
+    }
+    
+    
+    public void eliminarHorario(int id) {
+        
+        controlPersis.eliminarHorario(id);
+        
+    }
+
+    public void crearResponsable(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String tipo_responsable) {
+        
+        Responsable resp = new Responsable();
+        
+        resp.setDni(dni);
+        resp.setNombre(nombre);
+        resp.setDireccion(direccion);
+        resp.setApellido(apellido);
+        resp.setTelefono(telefono);
+        resp.setFecha_nac(fecha_nac);
+        resp.setTipo_responsable(tipo_responsable);
+        
+        controlPersis.crearResponsable(resp);
+    }
+
+    public List<Responsable> traerResponsables() {
+        
+        return controlPersis.traerResponsables();
+    }
+
+    public void eliminarResponsable(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+    
+
    
 
     

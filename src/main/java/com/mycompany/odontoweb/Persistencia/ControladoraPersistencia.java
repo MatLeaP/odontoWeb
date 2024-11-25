@@ -1,7 +1,9 @@
 package com.mycompany.odontoweb.Persistencia;
 
+import com.mycompany.odontoweb.Logica.Horario;
 import com.mycompany.odontoweb.Logica.Odontologo;
 import com.mycompany.odontoweb.Logica.Paciente;
+import com.mycompany.odontoweb.Logica.Responsable;
 import com.mycompany.odontoweb.Logica.Usuario;
 import com.mycompany.odontoweb.Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -11,11 +13,11 @@ import java.util.logging.Logger;
 
 public class ControladoraPersistencia {
     
-    //HorarioJpaController horaJpa = new HorarioJpaController();
+    HorarioJpaController horaJpa = new HorarioJpaController();
     OdontologoJpaController odontologoJpa = new OdontologoJpaController();
     PacienteJpaController pacienteJpa = new PacienteJpaController();
     //PersonaJpaController personaJpa = new PersonaJpaController();
-    //ResponsableJpaController responsableJpa = new ResponsableJpaController();
+    ResponsableJpaController responsableJpa = new ResponsableJpaController();
     //SecretarioJpaController secretarioJpa = new SecretarioJpaController();
     //TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuarioJpa = new UsuarioJpaController();
@@ -123,12 +125,40 @@ public class ControladoraPersistencia {
         }
     }
 
+    public void crearHorario(Horario horario) {
+        
+        horaJpa.create(horario);
+        
+    }
+
+    public List<Horario> traerHorarios() {
+        
+        return horaJpa.findHorarioEntities();
+    }
+
+    public void eliminarHorario(int id) {
+        
+        try {
+            horaJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    public void crearResponsable(Responsable resp) {
+        
+        responsableJpa.create(resp);
+    }
+
+    public List<Responsable> traerResponsables() {
+        
+        return responsableJpa.findResponsableEntities();
+    }
+
     
 
-   
+    
 
-
-    
-    
-    
+      
 }

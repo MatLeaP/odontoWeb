@@ -63,15 +63,15 @@
                                             <td><%= odon.getFecha_nac()%></td>
                                             <td><%= odon.getEspecialidad()%></td>
                                             <td style="display:flex; width:230px;">
-                                                <form name="eliminar" action="SvEliminarOdontologo" method="POST">
+                                                <form name="eliminar" action="SvEliminarOdontologos" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">
-                                                        <i class="fas fa-trash-alt"></i>Eliminar
+                                                        <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= odon.getId() %>">
                                                 </form>
                                                 <form name="editar" action="SvEditarOdontologo" method="GET">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:blue; margin-left:5px;">
-                                                        <i class="fas fa-trash-alt"></i>Editar
+                                                        <i class="fas fa-edit"></i>
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= odon.getId()%>">
                                                 </form>

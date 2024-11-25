@@ -69,13 +69,13 @@
                                             <td style="display:flex; width:230px;">
                                                 <form name="eliminar" action="SvEliminarPaciente" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">
-                                                        <i class="fas fa-trash-alt"></i>Eliminar
+                                                        <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= pacien.getId() %>">
                                                 </form>
                                                 <form name="editar" action="SvEditarPaciente" method="GET">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:blue; margin-left:5px;">
-                                                        <i class="fas fa-trash-alt"></i>Editar
+                                                        <i class="fas fa-edit"></i>
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= pacien.getId()%>">
                                                 </form>

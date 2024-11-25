@@ -94,6 +94,37 @@
                 </div>
             </li>
 
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTicket"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-clock"></i>
+                    <span>Turnos</span>
+                </a>
+                <div id="collapseTicket" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>                        
+                        <a class="collapse-item" href="SvHorario">Ver turnos</a>                        
+                        <a class="collapse-item" href="altaUsuarios.jsp">Generar turno</a>                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseResponsable"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-user-plus"></i>
+                    <span>Responsables</span>
+                </a>
+                <div id="collapseResponsable" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>                        
+                        <a class="collapse-item" href="SvResponsables">Ver responsables</a>                        
+                        <a class="collapse-item" href="altaResponsable.jsp">Alta responsable</a>                        
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
