@@ -4,6 +4,7 @@ import com.mycompany.odontoweb.Logica.Horario;
 import com.mycompany.odontoweb.Logica.Odontologo;
 import com.mycompany.odontoweb.Logica.Paciente;
 import com.mycompany.odontoweb.Logica.Responsable;
+import com.mycompany.odontoweb.Logica.Secretario;
 import com.mycompany.odontoweb.Logica.Usuario;
 import com.mycompany.odontoweb.Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -18,7 +19,7 @@ public class ControladoraPersistencia {
     PacienteJpaController pacienteJpa = new PacienteJpaController();
     //PersonaJpaController personaJpa = new PersonaJpaController();
     ResponsableJpaController responsableJpa = new ResponsableJpaController();
-    //SecretarioJpaController secretarioJpa = new SecretarioJpaController();
+    SecretarioJpaController secretarioJpa = new SecretarioJpaController();
     //TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuarioJpa = new UsuarioJpaController();
 
@@ -155,6 +156,41 @@ public class ControladoraPersistencia {
         
         return responsableJpa.findResponsableEntities();
     }
+
+    public void eliminarResponsable(int id) {
+        
+        try {
+            responsableJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Responsable traerResponsable(int id) {
+        
+        return responsableJpa.findResponsable(id);
+    }
+
+    public void editarResponsable(Responsable responsable) {
+        
+        try {
+            responsableJpa.edit(responsable);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Horario traerHorario(int id) {
+        
+        return horaJpa.findHorario(id);
+    }
+
+    public void crearSecretario(Secretario secre) {
+        
+        secretarioJpa.create(secre);
+    }
+
+    
 
     
 

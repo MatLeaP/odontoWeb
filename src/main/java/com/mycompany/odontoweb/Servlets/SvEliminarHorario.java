@@ -38,7 +38,7 @@ public class SvEliminarHorario extends HttpServlet {
         
         control.eliminarHorario(id);
         
-        response.sendRedirect("SvResponsables");
+        response.sendRedirect("SvHorario");
     }
 
     

@@ -169,8 +169,45 @@ public class Controladora {
     }
 
     public void eliminarResponsable(int id) {
+        
+        controlPersis.eliminarResponsable(id);
+    }
+
+    public Responsable traerResponsable(int id) {
+        
+        return controlPersis.traerResponsable(id);
+    }
+
+    public void editarResponsable(Responsable responsable) {
+        
+        controlPersis.editarResponsable(responsable);
+    }
+
+    public Horario traerHorario(int id) {
+        
+        return controlPersis.traerHorario(id);
+    }
+
+    public void crearSecretario(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String area) {
+        
+        Secretario secre = new Secretario();
+        
+        secre.setDni(dni);
+        secre.setNombre(nombre);
+        secre.setApellido(apellido);
+        secre.setTelefono(telefono);
+        secre.setDireccion(direccion);
+        secre.setFecha_nac(fecha_nac);
+        secre.setArea(area);
+             
+        controlPersis.crearSecretario(secre);
+    }
+
+    public List<Secretario> traerSecretarios() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+   
 
     
     

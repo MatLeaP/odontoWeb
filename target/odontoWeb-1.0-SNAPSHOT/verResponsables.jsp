@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page import="com.mycompany.odontoweb.Logica.Responsable"%>
 <%@page import="com.mycompany.odontoweb.Logica.Paciente"%>
 <%@page import="com.mycompany.odontoweb.Logica.Odontologo"%>
@@ -66,13 +66,13 @@
                                             <td><%= resp.getFecha_nac()%></td>
                                             <td><%= resp.getTipo_responsable()%></td>                                            
                                             <td style="display:flex; width:230px;">
-                                                <form name="eliminar" action="SvEliminarPaciente" method="POST">
+                                                <form name="eliminar" action="SvEliminarResponsables" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                     <input type="hidden" name="id" value="<%= resp.getId() %>">
                                                 </form>
-                                                <form name="editar" action="SvEditarPaciente" method="GET">
+                                                <form name="editar" action="SvEditarResponsable" method="GET">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:blue; margin-left:5px;">
                                                         <i class="fas fa-edit"></i>
                                                     </button>

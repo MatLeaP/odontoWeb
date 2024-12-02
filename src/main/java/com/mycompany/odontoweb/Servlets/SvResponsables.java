@@ -70,6 +70,7 @@ public class SvResponsables extends HttpServlet {
             return;
         }
         
+        
         control.crearResponsable(dni, nombre, apellido, telefono, direccion, fecha_nac, tipo_responsable);
         
         response.sendRedirect("index.jsp");

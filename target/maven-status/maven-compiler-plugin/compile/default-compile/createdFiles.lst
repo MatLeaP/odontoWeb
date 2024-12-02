@@ -19,7 +19,10 @@ com\mycompany\odontoweb\Servlets\SvEditarPaciente.class
 com\mycompany\odontoweb\Logica\Responsable_.class
 com\mycompany\odontoweb\Logica\Usuario_.class
 com\mycompany\odontoweb\Persistencia\ControladoraPersistencia.class
+com\mycompany\odontoweb\Servlets\SvEditarHorario.class
+com\mycompany\odontoweb\Servlets\SvEliminarResponsables.class
 com\mycompany\odontoweb\Persistencia\ResponsableJpaController.class
+com\mycompany\odontoweb\Servlets\SvEditarResponsable.class
 com\mycompany\odontoweb\Logica\Controladora.class
 com\mycompany\odontoweb\Logica\Odontologo.class
 com\mycompany\odontoweb\Logica\Turno_.class
@@ -28,6 +31,7 @@ com\mycompany\odontoweb\Persistencia\exceptions\PreexistingEntityException.class
 com\mycompany\odontoweb\Servlets\SvResponsables.class
 com\mycompany\odontoweb\Persistencia\UsuarioJpaController.class
 com\mycompany\odontoweb\Servlets\SvEliminarOdontologos.class
+com\mycompany\odontoweb\Servlets\SvSecretarios.class
 com\mycompany\odontoweb\Servlets\SvUsuarios.class
 com\mycompany\odontoweb\Logica\Odontologo_.class
 com\mycompany\odontoweb\Logica\Turno.class
@@ -40,3 +44,4 @@ com\mycompany\odontoweb\Servlets\SvEliminarUsuarios.class
 com\mycompany\odontoweb\Persistencia\exceptions\IllegalOrphanException.class
 com\mycompany\odontoweb\Servlets\SvEditarUsuario.class
 com\mycompany\odontoweb\Persistencia\exceptions\NonexistentEntityException.class
+com\mycompany\odontoweb\Servlets\SvEliminarHorario.class

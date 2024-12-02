@@ -48,8 +48,8 @@ public class SvHorario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String horarioInicio = request.getParameter("horario_inicio");
-        String horarioFin = request.getParameter("horario_fin");
+            String horarioInicio = request.getParameter("horario_inicio");
+            String horarioFin = request.getParameter("horario_fin");
                         
         control.crearHorario(horarioInicio, horarioFin);
         

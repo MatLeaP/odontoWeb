@@ -1,6 +1,8 @@
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvSecretarios.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Turno.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Horario.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Usuario.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarHorario.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\DiaSemana.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\ControladoraPersistencia.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\exceptions\PreexistingEntityException.java
@@ -12,6 +14,7 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\P
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarPaciente.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Controladora.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarPaciente.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarHorario.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarOdontologo.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvOdontologos.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\PacienteJpaController.java
@@ -20,8 +23,10 @@ C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persiste
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvResponsables.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarUsuarios.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvUsuarios.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEliminarResponsables.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Logica\Secretario.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvLogin.java
+C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Servlets\SvEditarResponsable.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\OdontologoJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\UsuarioJpaController.java
 C:\Users\Matias\Desktop\odontoWeb\src\main\java\com\mycompany\odontoweb\Persistencia\HorarioJpaController.java

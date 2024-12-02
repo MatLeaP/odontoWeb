@@ -57,6 +57,23 @@ public class Paciente extends Persona implements Serializable{
     public void setTipo_sangre(String tipo_sangre) {
         this.tipo_sangre = tipo_sangre;
     }
+
+    public Responsable getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Responsable responsable) {
+        this.responsable = responsable;
+    }
+
+    public List<Turno> getListaTurnos() {
+        return listaTurnos;
+    }
+
+    public void setListaTurnos(List<Turno> listaTurnos) {
+        this.listaTurnos = listaTurnos;
+    }
+    
     
     
     
