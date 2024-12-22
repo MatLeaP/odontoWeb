@@ -1,5 +1,6 @@
 package com.mycompany.odontoweb.Logica;
 
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Entity;
 
@@ -12,7 +13,7 @@ public class Responsable extends Persona{
     public Responsable() {
     }
 
-    public Responsable(String tipo_responsable, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Responsable(String tipo_responsable, int id, String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac) {
         super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tipo_responsable = tipo_responsable;
     }

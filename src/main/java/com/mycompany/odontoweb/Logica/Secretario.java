@@ -1,5 +1,6 @@
 package com.mycompany.odontoweb.Logica;
 
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -15,7 +16,7 @@ public class Secretario extends Persona{
     public Secretario() {
     }
 
-    public Secretario(String area, Usuario usuario, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Secretario(String area, Usuario usuario, int id, String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac) {
         super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.area = area;
         this.usuario = usuario;

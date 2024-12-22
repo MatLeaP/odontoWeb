@@ -54,8 +54,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="SvOdontologos">Ver odontologos</a>
-                        <a class="collapse-item" href="altaOdontologo.jsp">Alta odontologos</a>
-                        <a class="collapse-item" href="cards.html">Baja odontologos</a>
+                        <a class="collapse-item" href="SvAltaOdontologo">Alta odontologos</a>                        
                     </div>
                 </div>
             </li>
@@ -105,7 +104,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>                        
                         <a class="collapse-item" href="SvHorario">Ver turnos</a>                        
-                        <a class="collapse-item" href="altaUsuarios.jsp">Generar turno</a>                        
+                        <a class="collapse-item" href="SvTurnos">Generar turno</a>                        
                     </div>
                 </div>
             </li>
@@ -135,7 +134,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>                        
-                        <a class="collapse-item" href="SvResponsables">Ver secretarios</a>                        
+                        <a class="collapse-item" href="SvSecretarios">Ver secretarios</a>                        
                         <a class="collapse-item" href="altaSecretario.jsp">Alta secretario</a>                        
                     </div>
                 </div>

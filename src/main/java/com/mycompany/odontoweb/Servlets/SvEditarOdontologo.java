@@ -1,11 +1,17 @@
 package com.mycompany.odontoweb.Servlets;
 
 import com.mycompany.odontoweb.Logica.Controladora;
+import com.mycompany.odontoweb.Logica.Horario;
 import com.mycompany.odontoweb.Logica.Odontologo;
+import com.mycompany.odontoweb.Logica.Usuario;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -35,8 +41,13 @@ public class SvEditarOdontologo extends HttpServlet {
         
         Odontologo odon = control.traerOdontologo(id);
         
+        List <Horario> listaHorarios = control.traerHorarios();
+        List <Usuario> listaUsuarios = control.traerUsuarios();
+        
         HttpSession miSesion = request.getSession();
         miSesion.setAttribute("odonEditar", odon);
+        miSesion.setAttribute("listaHorarios", listaHorarios);
+        miSesion.setAttribute("listaUsuarios", listaUsuarios);
         
         response.sendRedirect("editarOdontologos.jsp");
     }
@@ -53,12 +64,14 @@ public class SvEditarOdontologo extends HttpServlet {
         String direccion = request.getParameter("direccion");
         String especialidad = request.getParameter("especialidad");
         String fechanacStr = request.getParameter("fechanac");
-
-        Date fecha_nac = null;
+        String usuario = request.getParameter("usuario");
+        String[] horariosSeleccionados = request.getParameterValues("horario[]");
+        
+        LocalDate fecha_nac = null;
         if (fechanacStr != null && !fechanacStr.isEmpty()) {
             try {
-                fecha_nac = new SimpleDateFormat("yyyy-MM-dd").parse(fechanacStr);
-            } catch (ParseException ex) {
+                fecha_nac = LocalDate.parse(fechanacStr); // Formato por defecto: yyyy-MM-dd
+            } catch (DateTimeParseException ex) {
                 Logger.getLogger(SvOdontologos.class.getName()).log(Level.SEVERE, "Error al parsear la fecha", ex);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Fecha de nacimiento inválida");
                 return;
@@ -68,6 +81,18 @@ public class SvEditarOdontologo extends HttpServlet {
             return;
         }
 
+        List<Long> listaIdsHorarios = new ArrayList<>();
+            if (horariosSeleccionados != null) {
+                for (String idHorario : horariosSeleccionados) {
+                listaIdsHorarios.add(Long.parseLong(idHorario));
+        }
+    }
+        
+             List<Horario> horarios = new ArrayList<>();
+        for (Long idHorario : listaIdsHorarios) {
+            Horario horario = control.traerHorario(idHorario);
+            horarios.add(horario);
+        }
         
         Odontologo odon = (Odontologo) request.getSession().getAttribute("odonEditar") ;
         
@@ -78,6 +103,9 @@ public class SvEditarOdontologo extends HttpServlet {
         odon.setDireccion(direccion);
         odon.setEspecialidad(especialidad);
         odon.setFecha_nac(fecha_nac);
+        Usuario unUsuario = control.traerUsuario(Integer.parseInt(usuario));
+        odon.setunUsuario(unUsuario);        
+        odon.setListaHorarios(horarios);
         
         control.editarOdontologo(odon);
         

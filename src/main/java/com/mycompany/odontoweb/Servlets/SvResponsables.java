@@ -5,6 +5,8 @@ import com.mycompany.odontoweb.Logica.Responsable;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -56,11 +58,11 @@ public class SvResponsables extends HttpServlet {
         String fechanacStr = request.getParameter("fechanac");
         String tipo_responsable = request.getParameter("tipo_responsable");
         
-        Date fecha_nac = null;
+        LocalDate fecha_nac = null;
         if (fechanacStr != null && !fechanacStr.isEmpty()) {
             try {
-                fecha_nac = new SimpleDateFormat("yyyy-MM-dd").parse(fechanacStr);
-            } catch (ParseException ex) {
+                fecha_nac = LocalDate.parse(fechanacStr); // Formato por defecto: yyyy-MM-dd
+            } catch (DateTimeParseException ex) {
                 Logger.getLogger(SvOdontologos.class.getName()).log(Level.SEVERE, "Error al parsear la fecha", ex);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Fecha de nacimiento inválida");
                 return;

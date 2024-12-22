@@ -7,6 +7,8 @@ import com.mycompany.odontoweb.Logica.Secretario;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,12 +59,13 @@ public class SvSecretarios extends HttpServlet {
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");        
         String fechanacStr = request.getParameter("fechanac");
+        String area = request.getParameter("area");
         
-        Date fecha_nac = null;
+        LocalDate fecha_nac = null;
         if (fechanacStr != null && !fechanacStr.isEmpty()) {
             try {
-                fecha_nac = new SimpleDateFormat("yyyy-MM-dd").parse(fechanacStr);
-            } catch (ParseException ex) {
+                fecha_nac = LocalDate.parse(fechanacStr); // Formato por defecto: yyyy-MM-dd
+            } catch (DateTimeParseException ex) {
                 Logger.getLogger(SvOdontologos.class.getName()).log(Level.SEVERE, "Error al parsear la fecha", ex);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Fecha de nacimiento inválida");
                 return;
@@ -71,6 +74,9 @@ public class SvSecretarios extends HttpServlet {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El campo de fecha de nacimiento está vacío");
             return;
         }
+        
+        control.crearSecretario(dni, nombre, apellido, telefono, direccion, fecha_nac, area);
+        response.sendRedirect("SvSecretarios");
     }
 
     

@@ -1,4 +1,5 @@
 
+<%@page import="com.mycompany.odontoweb.Logica.Horario"%>
 <%@page import="com.mycompany.odontoweb.Logica.Odontologo"%>
 <%@page import="com.mycompany.odontoweb.Logica.Usuario"%>
 <%@page import="java.util.List"%>
@@ -33,6 +34,8 @@
                                             <th>Direccion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Especialidad</th>
+                                            <th>Usuario</th>
+                                            <th>Horario de atencion</th>
                                             <th style="width:210px">Accion</th>
                                         </tr>
                                     </thead>
@@ -45,6 +48,8 @@
                                             <th>Direccion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Especialidad</th>
+                                            <th>Usuario</th>
+                                            <th>Horario de atencion</th>
                                             <th style="width:210px">Accion</th>
                                         </tr>
                                     </tfoot>
@@ -53,7 +58,7 @@
                                     List <Odontologo> listaOdontologos = (List) request.getSession().getAttribute("listaOdontologos");
                                     %>
                                     <tbody>
-                                        <%for(Odontologo odon : listaOdontologos){%>
+                                        <% for(Odontologo odon : listaOdontologos) {%>
                                         <tr>                                            
                                             <td><%= odon.getDni()%></td>
                                             <td><%= odon.getNombre()%></td>
@@ -62,6 +67,22 @@
                                             <td><%= odon.getDireccion()%></td>
                                             <td><%= odon.getFecha_nac()%></td>
                                             <td><%= odon.getEspecialidad()%></td>
+                                            <td><%= odon.getunUsuario().getNombre_usuario()%></td>
+                                            <td>
+                                                <%
+                                                    if (odon.getListaHorarios() != null && !odon.getListaHorarios().isEmpty()) {
+                                                        for (Horario horario : odon.getListaHorarios()) {
+                                                %>
+                                                <%= "Inicio: " + horario.getHorarioInicio() + ", Fin: " + horario.getHorarioFin() + "<br>"%>
+                                                <%
+                                                    }
+                                                } else {
+                                                %>
+                                                Sin horarios asignados
+                                                <%
+                                                    }
+                                                %>
+                                            </td>
                                             <td style="display:flex; width:230px;">
                                                 <form name="eliminar" action="SvEliminarOdontologos" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">

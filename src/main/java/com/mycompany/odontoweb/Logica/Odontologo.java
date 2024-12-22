@@ -1,9 +1,12 @@
 package com.mycompany.odontoweb.Logica;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -12,36 +15,30 @@ public class Odontologo extends Persona implements Serializable{
     
     //private int id_odontologo;
     private String especialidad;    
-    @OneToMany(mappedBy="odonto")
+    @OneToMany(mappedBy = "odonto") 
     private List<Turno> listaTurnos;    
     @OneToOne
     private Usuario unUsuario;    
-    @OneToOne
-    private Horario unHorario;
+    @ManyToMany
+    @JoinTable(
+            name = "odontologo_horario", // Nombre de la tabla intermedia
+            joinColumns = @JoinColumn(name = "odontologo_id"), // Clave foránea hacia Odontologo
+            inverseJoinColumns = @JoinColumn(name = "listahorarios_id") // Clave foránea hacia Horario
+    )
+    private List<Horario> listaHorarios;
 
     
     public Odontologo() {
     }
 
-    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario,List<Horario>  listaHorarios, int id, String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac) {
         super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.especialidad = especialidad;
         this.listaTurnos = listaTurnos;
         this.unUsuario = unUsuario;
-        this.unHorario = unHorario;
+        this.listaHorarios = listaHorarios;
     }
-
-
-    
-
-  
-
-   
-
  
-
- 
-
    
     /*
     public int getId_odontologo() {
@@ -76,12 +73,12 @@ public class Odontologo extends Persona implements Serializable{
         this.unUsuario = unUsuario;
     }
 
-    public Horario getunHorario() {
-        return unHorario;
+    public List<Horario> getListaHorarios() {
+        return listaHorarios;
     }
 
-    public void setunHorario(Horario unHorario) {
-        this.unHorario = unHorario;
+    public void setListaHorarios(List<Horario> listaHorarios) {
+        this.listaHorarios = listaHorarios;
     }
     
     

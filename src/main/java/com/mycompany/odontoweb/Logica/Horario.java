@@ -1,53 +1,81 @@
 package com.mycompany.odontoweb.Logica;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
 
 @Entity
 public class Horario implements Serializable {
- 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_horario;
-    private String horario_inicio;
-    private String horario_fin;
+    private Long id; // Considera usar Long para la clave primaria
+
+    private String horarioInicio;
+    private String horarioFin;
+
+   
+    @ManyToMany(mappedBy = "listaHorarios")
+    private List<Odontologo> odontologos;
     
 
 
-    public Horario(int id_horario, String horario_inicio, String horario_fin) {
-        this.id_horario = id_horario;
-        this.horario_inicio = horario_inicio;
-        this.horario_fin = horario_fin;
+    public Horario(Long id, String horarioInicio, String horarioFin) {
+        this.id = id;
+        this.horarioInicio = horarioInicio;
+        this.horarioFin = horarioFin;
     }
 
     public Horario() {
     }
 
-    public int getId_horario() {
-        return id_horario;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_horario(int id_horario) {
-        this.id_horario = id_horario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getHorario_inicio() {
-        return horario_inicio;
+    public String getHorarioInicio() {
+        return horarioInicio;
     }
 
-    public void setHorario_inicio(String horario_inicio) {
-        this.horario_inicio = horario_inicio;
+    public void setHorarioInicio(String horarioInicio) {
+        this.horarioInicio = horarioInicio;
     }
 
-    public String getHorario_fin() {
-        return horario_fin;
+    public String getHorarioFin() {
+        return horarioFin;
     }
 
-    public void setHorario_fin(String horario_fin) {
-        this.horario_fin = horario_fin;
+    public void setHorarioFin(String horarioFin) {
+        this.horarioFin = horarioFin;
+    }
+
+    
+
+    public List<Odontologo> getOdontologos() {
+        return odontologos;
+    }
+
+    public void setOdontologos(List<Odontologo> odontologos) {
+        this.odontologos = odontologos;
+    }
+
+    @Override
+    public String toString() {
+        return "Horario{" +
+                "id=" + id +
+                ", horarioInicio='" + horarioInicio + '\'' +
+                ", horarioFin='" + horarioFin + '\'' +
+                '}';
     }
     
     

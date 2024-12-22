@@ -1,4 +1,6 @@
 
+<%@page import="com.mycompany.odontoweb.Logica.Horario"%>
+<%@page import="java.util.List"%>
 <%@page import="com.mycompany.odontoweb.Logica.Odontologo"%>
 <%@page import="com.mycompany.odontoweb.Logica.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -40,6 +42,38 @@
                 <input type="text" class="form-control form-control-user" id="especialidad" name="especialidad"
                        placeholder="Especialidad" value="<%= odon.getEspecialidad() %>">
             </div>
+            <% List<Horario> listaHorarios = (List) request.getSession().getAttribute("listaHorarios"); %>
+            <div class="col-sm-6 mb-3">
+                <label for="horario">Seleccione los horarios de atención:</label>
+                <select class="form-control" id="horario" name="horario[]" multiple required>
+                    <% if (listaHorarios != null) { %>
+                    <% for (Horario horario : listaHorarios) {%>
+                    <option value="<%= horario.getId() %>">
+                        <%= horario.getHorarioInicio() %> - <%= horario.getHorarioFin()%>
+                    </option>
+                    <% } %>
+                    <% } else { %>
+                    <option value="" disabled>No hay horarios disponibles</option>
+                    <% } %>
+                </select>
+                <small class="form-text text-muted">Mantenga presionada la tecla CTRL (Windows) o CMD (Mac) para seleccionar múltiples opciones.</small>
+            </div> 
+             <% List <Usuario> listaUsuarios = (List) request.getSession().getAttribute("listaUsuarios");
+                                    %>
+                <div class="col-sm-6 mb-3">
+                    <label for="usuario">Seleccione un usuario:</label>
+                        <select class="form-control" id="usuario" name="usuario" required>                            
+                            <% if (listaUsuarios != null) { %>
+                            <% for (Usuario usuarios : listaUsuarios) {%>
+                            <option value="<%= usuarios.getId_usuario()%>">
+                            <%= usuarios.getNombre_usuario()%>
+                            </option>
+                            <% } %>
+                            <% } else { %>
+                            <option value="" disabled>No hay usuario disponible</option>
+                            <% } %>
+                        </select>
+                </div>    
         </div>
         
         

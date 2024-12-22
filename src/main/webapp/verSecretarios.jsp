@@ -99,4 +99,4 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
     
-    <%@include file="compo
+    <%@include file="components/bodyInf.jsp" %>

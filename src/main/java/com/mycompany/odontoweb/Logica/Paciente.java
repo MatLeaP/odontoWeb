@@ -1,6 +1,7 @@
 package com.mycompany.odontoweb.Logica;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;    
@@ -22,7 +23,7 @@ public class Paciente extends Persona implements Serializable{
     public Paciente() {
     }
 
-    public Paciente(String tiene_os, String tipo_sangre, Responsable responsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Paciente(String tiene_os, String tipo_sangre, Responsable responsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac) {
         super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_os = tiene_os;
         this.tipo_sangre = tipo_sangre;

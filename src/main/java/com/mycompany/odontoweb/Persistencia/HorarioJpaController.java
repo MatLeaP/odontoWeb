@@ -52,7 +52,7 @@ public class HorarioJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = horario.getId_horario();
+                Long id = horario.getId();
                 if (findHorario(id) == null) {
                     throw new NonexistentEntityException("The horario with id " + id + " no longer exists.");
                 }
@@ -73,7 +73,7 @@ public class HorarioJpaController implements Serializable {
             Horario horario;
             try {
                 horario = em.getReference(Horario.class, id);
-                horario.getId_horario();
+                horario.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The horario with id " + id + " no longer exists.", enfe);
             }
@@ -110,7 +110,7 @@ public class HorarioJpaController implements Serializable {
         }
     }
 
-    public Horario findHorario(int id) {
+    public Horario findHorario(Long id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Horario.class, id);

@@ -94,7 +94,12 @@ public class OdontologoJpaController implements Serializable {
     }
 
     public List<Odontologo> findOdontologoEntities() {
-        return findOdontologoEntities(true, -1, -1);
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery("SELECT DISTINCT o FROM Odontologo o JOIN FETCH o.listaHorarios", Odontologo.class).getResultList();
+        } finally {
+            em.close();
+        }
     }
 
     public List<Odontologo> findOdontologoEntities(int maxResults, int firstResult) {

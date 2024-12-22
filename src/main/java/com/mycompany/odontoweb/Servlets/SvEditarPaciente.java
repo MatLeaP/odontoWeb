@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -60,11 +62,11 @@ public class SvEditarPaciente extends HttpServlet {
         String os = request.getParameter("os");
         String tipo_sangre = request.getParameter("tipo_sangre");
         
-         Date fecha_nac = null;
+        LocalDate fecha_nac = null;
         if (fechanacStr != null && !fechanacStr.isEmpty()) {
             try {
-                fecha_nac = new SimpleDateFormat("yyyy-MM-dd").parse(fechanacStr);
-            } catch (ParseException ex) {
+                fecha_nac = LocalDate.parse(fechanacStr); // Formato por defecto: yyyy-MM-dd
+            } catch (DateTimeParseException ex) {
                 Logger.getLogger(SvOdontologos.class.getName()).log(Level.SEVERE, "Error al parsear la fecha", ex);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Fecha de nacimiento inválida");
                 return;

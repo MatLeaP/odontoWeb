@@ -180,7 +180,7 @@ public class ControladoraPersistencia {
         }
     }
 
-    public Horario traerHorario(int id) {
+    public Horario traerHorario(Long id) {
         
         return horaJpa.findHorario(id);
     }
@@ -189,6 +189,35 @@ public class ControladoraPersistencia {
         
         secretarioJpa.create(secre);
     }
+
+     public void eliminarSecretario(int id) {
+         
+        try {
+            secretarioJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public List<Secretario> traerSecretarios() {
+    
+        return secretarioJpa.findSecretarioEntities();
+    }
+
+    public Secretario traerSecretario(int id) {
+        
+        return secretarioJpa.findSecretario(id);
+    }
+
+    public void editarSecretario(Secretario secretario) {
+        
+        try {
+            secretarioJpa.edit(secretario);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
 
     
 

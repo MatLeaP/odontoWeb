@@ -1,6 +1,7 @@
 package com.mycompany.odontoweb.Logica;
 
 import com.mycompany.odontoweb.Persistencia.ControladoraPersistencia;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,7 +58,7 @@ public class Controladora {
         return ingreso;     
     }
 
-    public void crearOdontologo(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String especialidad) {
+    public void crearOdontologo(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String especialidad, String usuario, List<Long> listaIdsHorarios) {
         
         Odontologo odon = new Odontologo();
         odon.setDni(dni);
@@ -67,6 +68,16 @@ public class Controladora {
         odon.setDireccion(direccion);
         odon.setFecha_nac(fecha_nac);
         odon.setEspecialidad(especialidad);
+        
+        Usuario unUsuario = controlPersis.traerUsuario(Integer.parseInt(usuario));
+        odon.setunUsuario(unUsuario);
+        
+        List<Horario> horarios = new ArrayList<>();
+        for (Long idHorario : listaIdsHorarios) {
+            Horario horario = controlPersis.traerHorario(idHorario);
+            horarios.add(horario);
+        }
+        odon.setListaHorarios(horarios);
         
         controlPersis.crearOdontologo(odon);
         
@@ -90,7 +101,7 @@ public class Controladora {
         controlPersis.editarOdontologo(odon);
     }
 
-    public void crearPaciente(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String os, String tipo_sangre) {
+    public void crearPaciente(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String os, String tipo_sangre) {
         
         Paciente paciente = new Paciente();
         paciente.setDni(dni);
@@ -129,8 +140,8 @@ public class Controladora {
         
         Horario horario = new Horario();
         
-        horario.setHorario_inicio(horarioInicio);
-        horario.setHorario_fin(horarioFin);
+        horario.setHorarioInicio(horarioInicio);
+        horario.setHorarioFin(horarioFin);
         
         
         controlPersis.crearHorario(horario);
@@ -148,7 +159,7 @@ public class Controladora {
         
     }
 
-    public void crearResponsable(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String tipo_responsable) {
+    public void crearResponsable(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String tipo_responsable) {
         
         Responsable resp = new Responsable();
         
@@ -183,12 +194,12 @@ public class Controladora {
         controlPersis.editarResponsable(responsable);
     }
 
-    public Horario traerHorario(int id) {
+    public Horario traerHorario(Long id) {
         
         return controlPersis.traerHorario(id);
     }
 
-    public void crearSecretario(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac, String area) {
+    public void crearSecretario(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String area) {
         
         Secretario secre = new Secretario();
         
@@ -204,6 +215,27 @@ public class Controladora {
     }
 
     public List<Secretario> traerSecretarios() {
+        
+        return controlPersis.traerSecretarios();
+        
+    }
+
+    public void eliminarSecretario(int id) {
+        
+        controlPersis.eliminarSecretario(id);
+    }
+
+    public Secretario traerSecretario(int id) {
+        
+        return controlPersis.traerSecretario(id);
+    }
+
+    public void editarSecretario(Secretario secretario) {
+        
+        controlPersis.editarSecretario(secretario);
+    }
+
+    public void crearTurno(LocalDate fecha_turno, String hora_turno, String afeccion, String odontologo, String paciente) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

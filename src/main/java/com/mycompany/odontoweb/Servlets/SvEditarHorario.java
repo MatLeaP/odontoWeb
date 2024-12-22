@@ -27,7 +27,7 @@ public class SvEditarHorario extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int id = Integer.parseInt(request.getParameter("id"));
+        Long id = Long.parseLong(request.getParameter("id"));
         
         Horario hora = control.traerHorario(id);
         
