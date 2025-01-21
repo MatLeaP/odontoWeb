@@ -57,7 +57,8 @@
                                     %>
                 <div class="col-sm-6 mb-3">
                     <label for="usuario">Seleccione un usuario:</label>
-                        <select class="form-control" id="usuario" name="usuario" required>                            
+                        <select class="form-control" id="usuario" name="usuario" required>    
+                            <option value="" disabled selected>Seleccione un usuario</option>
                             <% if (listaUsuarios != null) { %>
                             <% for (Usuario usuarios : listaUsuarios) {%>
                             <option value="<%= usuarios.getId_usuario()%>">

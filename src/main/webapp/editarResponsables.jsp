@@ -11,7 +11,7 @@
     <%@include file="components/bodySup.jsp" %>
 
     <% Responsable resp = (Responsable) request.getSession().getAttribute("resp");%>
-    <h1>Editar Usuarios</h1>
+    <h1>Editar responsable</h1>
     <form class="user" action="SvEditarResponsable" method="POST">
         <div class="form-group col">
             <div class="col-sm-6 mb-3">

@@ -3,6 +3,7 @@ package com.mycompany.odontoweb.Servlets;
 import com.mycompany.odontoweb.Logica.Controladora;
 import com.mycompany.odontoweb.Logica.Odontologo;
 import com.mycompany.odontoweb.Logica.Paciente;
+import com.mycompany.odontoweb.Logica.Turno;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
@@ -35,15 +36,15 @@ public class SvTurnos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<Paciente> listaPacientes =control.traerPacientes();
-        List<Odontologo> listaOdontologos =control.traerOdontologos();
+        List<Turno> listaTurnos = control.traerTurnos();
+        
         
         
         HttpSession miSesion = request.getSession();
-        miSesion.setAttribute("listaPacientes", listaPacientes);
-        miSesion.setAttribute("listaOdontologos", listaOdontologos);
+        miSesion.setAttribute("listaTurnos", listaTurnos);
         
-        response.sendRedirect("altaTurno.jsp");
+        
+        response.sendRedirect("verTurnos.jsp");
         
     }
 
@@ -53,10 +54,11 @@ public class SvTurnos extends HttpServlet {
             throws ServletException, IOException {
         
         String fechaTurnoStr = request.getParameter("fecha_turno");
-        String hora_turno = request.getParameter("hora_turno");
+        String hora_turno = request.getParameter("horario_turno");
         String afeccion = request.getParameter("afeccion");
-        String odontologo = request.getParameter("odontologo");
+        String odontologo = request.getParameter("odontologoId");
         String paciente = request.getParameter("paciente");
+        
         
         LocalDate fecha_turno = null;
         if (fechaTurnoStr != null && !fechaTurnoStr.isEmpty()) {

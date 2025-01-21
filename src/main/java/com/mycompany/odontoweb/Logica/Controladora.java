@@ -101,7 +101,8 @@ public class Controladora {
         controlPersis.editarOdontologo(odon);
     }
 
-    public void crearPaciente(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String os, String tipo_sangre) {
+    
+    public void crearPaciente(String dni, String nombre, String apellido, String telefono, String direccion, LocalDate fecha_nac, String os, String tipo_sangre, String responsable) {
         
         Paciente paciente = new Paciente();
         paciente.setDni(dni);
@@ -112,6 +113,9 @@ public class Controladora {
         paciente.setFecha_nac(fecha_nac);
         paciente.setTiene_os(os);
         paciente.setTipo_sangre(tipo_sangre);
+        
+        Responsable resp = controlPersis.traerResponsable(Integer.parseInt(responsable) );
+        paciente.setResponsable(resp);
         
         controlPersis.crearPaciente(paciente);
     }
@@ -234,10 +238,58 @@ public class Controladora {
         
         controlPersis.editarSecretario(secretario);
     }
-
+    
     public void crearTurno(LocalDate fecha_turno, String hora_turno, String afeccion, String odontologo, String paciente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        Turno turno = new Turno();
+        
+        turno.setFecha_turno(fecha_turno);
+        
+        Horario hora = controlPersis.traerHorario(Long.parseLong(hora_turno));
+        turno.setHora_turno(hora);
+        turno.setAfeccion(afeccion);
+        
+        Odontologo odon = controlPersis.traerOdontologo(Integer.parseInt(odontologo));        
+        turno.setOdonto(odon);
+        
+        Paciente pacien = controlPersis.traerPaciente(Integer.parseInt(paciente));
+        turno.setPacien(pacien);
+        
+        controlPersis.crearTurno(turno);
     }
+
+
+    public List<Horario> traerOdontologoPorHorario(int odontologoId) {
+        
+        Odontologo odonto = controlPersis.traerOdontologo(odontologoId);
+        
+        
+        
+        List<Horario> horarios = odonto.getListaHorarios();
+        
+        for (Horario idHorario : horarios) {
+            Horario horario;
+            horario = controlPersis.traerHorario(idHorario.getId());
+            horarios.add(horario);
+        }               
+        
+        
+        return odonto.getListaHorarios() ;
+    }
+
+    public List<Turno> traerTurnos() {
+        
+        return controlPersis.traerTurnos();
+    }
+
+    public void eliminarTurno(int id) {
+        
+        controlPersis.eliminarTurno(id);
+    }
+
+    
+
+  
 
    
 

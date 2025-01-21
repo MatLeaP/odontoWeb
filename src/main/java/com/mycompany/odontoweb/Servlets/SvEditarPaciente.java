@@ -2,6 +2,7 @@ package com.mycompany.odontoweb.Servlets;
 
 import com.mycompany.odontoweb.Logica.Controladora;
 import com.mycompany.odontoweb.Logica.Paciente;
+import com.mycompany.odontoweb.Logica.Responsable;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -9,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -38,8 +40,11 @@ public class SvEditarPaciente extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Paciente pacien = control.traerPaciente(id);
         
+        List <Responsable> listaResponsables = control.traerResponsables();
+        
         HttpSession miSesion = request.getSession();
         miSesion.setAttribute("pacienEditar", pacien);
+        miSesion.setAttribute("listaResponsables", listaResponsables);
         
         response.sendRedirect("editarPacientes.jsp");
         

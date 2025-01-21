@@ -3,6 +3,7 @@ package com.mycompany.odontoweb.Logica;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -15,7 +16,7 @@ public class Odontologo extends Persona implements Serializable{
     
     //private int id_odontologo;
     private String especialidad;    
-    @OneToMany(mappedBy = "odonto") 
+    @OneToMany(mappedBy = "odonto", cascade = CascadeType.ALL, orphanRemoval = true) 
     private List<Turno> listaTurnos;    
     @OneToOne
     private Usuario unUsuario;    

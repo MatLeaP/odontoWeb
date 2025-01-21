@@ -6,7 +6,7 @@
     <%@include file="components/header.jsp" %>
     <%@include file="components/bodySup.jsp" %>
 
-    <h1>Alta Usuarios</h1>
+    <h1>Alta Horario</h1>
     <form class="user" action="SvHorario" method="POST">
         <div class="form-group col">
             <div class="col-sm-6 mb-3">
@@ -22,7 +22,7 @@
         
         
         <button  class="btn btn-primary btn-user btn-block" type = "submit" >
-            Crear usuario
+            Crear horario
         </button>
         <hr>
     

@@ -5,6 +5,7 @@ import com.mycompany.odontoweb.Logica.Odontologo;
 import com.mycompany.odontoweb.Logica.Paciente;
 import com.mycompany.odontoweb.Logica.Responsable;
 import com.mycompany.odontoweb.Logica.Secretario;
+import com.mycompany.odontoweb.Logica.Turno;
 import com.mycompany.odontoweb.Logica.Usuario;
 import com.mycompany.odontoweb.Persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -20,8 +21,9 @@ public class ControladoraPersistencia {
     //PersonaJpaController personaJpa = new PersonaJpaController();
     ResponsableJpaController responsableJpa = new ResponsableJpaController();
     SecretarioJpaController secretarioJpa = new SecretarioJpaController();
-    //TurnoJpaController turnoJpa = new TurnoJpaController();
+    TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuarioJpa = new UsuarioJpaController();
+    AtencionJpaController atencionJpa = new AtencionJpaController();
 
     
     /*public ControladoraPersistencia(){
@@ -214,6 +216,25 @@ public class ControladoraPersistencia {
         try {
             secretarioJpa.edit(secretario);
         } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void crearTurno(Turno turno) {
+        
+        turnoJpa.create(turno);
+    }
+
+    public List<Turno> traerTurnos() {
+        
+        return turnoJpa.findTurnoEntities();
+    }
+
+    public void eliminarTurno(int id) {
+        
+        try {
+            turnoJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

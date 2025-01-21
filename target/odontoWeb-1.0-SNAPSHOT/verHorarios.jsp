@@ -45,20 +45,20 @@
                             <!-- Contenedor flexible -->
                             <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <!-- Mostrar horario -->
-                                <span><%= listaHorarios.get(i).getHorario_inicio() %> - <%= listaHorarios.get(i).getHorario_fin() %></span>
+                                <span><%= listaHorarios.get(i).getHorarioInicio() %> - <%= listaHorarios.get(i).getHorarioFin() %></span>
                                 <!-- Botones de acción -->
                                 <div style="display: flex; gap: 5px; margin-left: 10px;">
                                     <form name="eliminar" action="SvEliminarHorario" method="POST" style="margin: 0;">
                                         <button type="submit" class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
-                                        <input type="hidden" name="id" value="<%= listaHorarios.get(i).getId_horario() %>">
+                                        <input type="hidden" name="id" value="<%= listaHorarios.get(i).getId() %>">
                                     </form>
                                     <form name="editar" action="SvEditarHorario" method="GET" style="margin: 0;">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit"></i>
                                         </button>
-                                        <input type="hidden" name="id" value="<%= listaHorarios.get(i).getId_horario() %>">
+                                        <input type="hidden" name="id" value="<%= listaHorarios.get(i).getId() %>">
                                     </form>
                                 </div>
                             </div>

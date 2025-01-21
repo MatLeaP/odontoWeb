@@ -56,7 +56,9 @@ public class SvPacientes extends HttpServlet {
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");        
         String fechanacStr = request.getParameter("fechanac");
-        String area = request.getParameter("area");
+        String os = request.getParameter("os");
+        String tipo_sangre = request.getParameter("tipo_sangre");
+        String responsable = request.getParameter("responsable");
   
         LocalDate fecha_nac = null;
         if (fechanacStr != null && !fechanacStr.isEmpty()) {
@@ -72,7 +74,7 @@ public class SvPacientes extends HttpServlet {
             return;
         }
         
-        control.crearSecretario(dni, nombre, apellido, telefono, direccion, fecha_nac, area);
+        control.crearPaciente(dni, nombre, apellido, telefono, direccion, fecha_nac,os, tipo_sangre, responsable);
         
         response.sendRedirect("index.jsp");
     }

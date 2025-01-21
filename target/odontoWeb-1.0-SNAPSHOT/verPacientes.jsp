@@ -35,6 +35,7 @@
                                             <th>Fecha de nacimiento</th>
                                             <th>Tiene obra social</th>
                                             <th>Tipo de sangre</th>
+                                            <th>Responsable</th>
                                             <th style="width:210px">Accion</th>
                                         </tr>
                                     </thead>
@@ -48,6 +49,7 @@
                                             <th>Fecha de nacimiento</th>
                                             <th>Tiene obra social</th>
                                             <th>Tipo de sangre</th>
+                                            <th>Responsable</th>
                                             <th style="width:210px">Accion</th>
                                         </tr>
                                     </tfoot>
@@ -66,6 +68,7 @@
                                             <td><%= pacien.getFecha_nac()%></td>
                                             <td><%= pacien.getTiene_os()%></td>
                                             <td><%= pacien.getTipo_sangre()%></td>
+                                            <td><%= pacien.getResponsable().getNombre() %></td>                                            
                                             <td style="display:flex; width:230px;">
                                                 <form name="eliminar" action="SvEliminarPaciente" method="POST">
                                                     <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-rigth:5px;">

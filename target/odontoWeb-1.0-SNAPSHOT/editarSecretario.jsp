@@ -8,7 +8,7 @@
     <%@include file="components/bodySup.jsp" %>
 
     <% Secretario secre = (Secretario) request.getSession().getAttribute("secretario");%>
-    <h1>Editar Sectario</h1>
+    <h1>Editar Secretario</h1>
     <form class="user" action="SvEditarSecretario" method="POST">
         <div class="form-group col">
             <div class="col-sm-6 mb-3">

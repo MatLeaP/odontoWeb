@@ -10,6 +10,7 @@
     <class>com.mycompany.odontoweb.Logica.Secretario</class>
     <class>com.mycompany.odontoweb.Logica.Turno</class>
     <class>com.mycompany.odontoweb.Logica.Usuario</class>
+    <class>com.mycompany.odontoweb.Logica.Atencion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/odontoweb?serverTimezone=UTC"/>
@@ -17,7 +18,7 @@
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="root"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="hibernate.hbm2ddl.auto" value="update" />
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
     </properties>
   </persistence-unit>
 </persistence>

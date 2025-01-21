@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html lang='en'>
 <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
+<footer class="sticky-footer bg-white" style="position: fixed; bottom: 0; left: 0; width: 100%;">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Matias Perona 2024</span>
+        </div>
+    </div>
+</footer>
             <!-- End of Footer -->
 
         </div>
